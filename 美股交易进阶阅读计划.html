@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>美股交易 · 进阶阅读计划（进度追踪版）</title>
+<title>美股价值投资 · 进阶阅读计划（进度追踪版）</title>
 <style>
   :root {
     --ink: #2c2c2a; --muted: #5f5e5a; --line: #d3d1c7;
@@ -63,14 +63,16 @@
   .b-need { background: var(--page); color: var(--muted); border: 1px solid var(--line); }
   .b-now  { background: var(--amber-bg); color: var(--amber-ink); border: 1px solid var(--amber-line); }
   .b-done { background: var(--green-bg); color: var(--green-ink); border: 1px solid var(--green-line); }
-  .s0 .stage-num { background: var(--amber-line); }
-  .s1 .stage-num { background: var(--green-line); }
-  .s2 .stage-num, .s3 .stage-num, .s4 .stage-num { background: var(--blue-line); }
-  .s-fin .stage-num { background: var(--pink-line); }
+  .s0 .stage-num, .s1 .stage-num { background: var(--amber-line); }
+  .s2 .stage-num, .s3 .stage-num, .s4 .stage-num, .s5 .stage-num { background: var(--blue-line); }
+  .apx { background: var(--page); border-style: dashed; }
+  .apx .stage-num { background: var(--muted); }
+  .apx .book input[type="checkbox"] { accent-color: #5f5e5a; }
   .note {
     background: var(--green-bg); border: 1px solid var(--green-line); border-radius: 8px;
     padding: 12px 16px; font-size: 13px; color: var(--green-ink); margin-top: 10px;
   }
+  .note.warn { background: var(--amber-bg); border-color: var(--amber-line); color: var(--amber-ink); }
   .stage-progress { font-size: 12px; color: var(--muted); }
   .map { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px 26px; }
   .layer { display: flex; gap: 14px; align-items: stretch; }
@@ -106,16 +108,16 @@
 <div class="wrap">
 
 <header>
-  <h1>美股交易 · 进阶阅读计划</h1>
-  <p>路线：热身 → 量化入门（主场提速）→ 市场常识 → 投资理念 → 财报分析 → 交易技术与心理。共六阶段，约 26 周。勾选书目即自动保存进度（本机浏览器）。</p>
+  <h1>美股价值投资 · 进阶阅读计划</h1>
+  <p>路线：热身 → 会计语言（地基）→ 价值投资框架 → 商业理解 → 原汁原味的巴菲特 → 估值落地。主线 11 本，约 26 周。勾选书目即自动保存进度（本机浏览器）。</p>
   <div class="chips">
     <span class="chip">🎯 21 天挑战 · 每天 30 分钟</span>
     <span class="chip">🎯 360 天挑战 · 300 小时 · 每天 50 分钟</span>
-    <span class="chip">📌 2026-09-27 调序：量化提前到第 1 步</span>
+    <span class="chip">📌 2026-09-27 二次调整：改走巴菲特路线</span>
   </div>
   <div class="progress-panel">
     <div class="progress-bar"><div class="progress-fill" id="totalFill"></div></div>
-    <div class="progress-text" id="totalText">总进度：0 / 14 本（0%）</div>
+    <div class="progress-text" id="totalText">总进度：0 / 11 本（0%）</div>
   </div>
 </header>
 
@@ -124,80 +126,105 @@
 <div class="stage s0">
   <div class="stage-head">
     <span class="stage-num">第 0 步</span>
-    <span class="stage-title">热身：交易者视角与纪律</span>
+    <span class="stage-title">热身：一位数学家的市场观</span>
     <span class="stage-week">现在 · 约 1 周</span>
     <span class="stage-progress" data-stage-progress></span>
   </div>
-  <p class="goal">索普是美股量化交易的鼻祖，这本自传兼讲故事与风险观，是整条路线的引子。</p>
+  <p class="goal">索普既是赌桌上的概率玩家，也是华尔街最早的量化套利者——先用他的故事建立「市场是什么」的直觉，再进入价值投资。</p>
   <div class="book" data-book="战胜一切市场的人"><input type="checkbox"><span class="order">1</span><span class="btitle">《战胜一切市场的人》爱德华·O.索普</span><span class="badge b-now">在读 68%</span></div>
 </div>
 
 <div class="stage s1">
   <div class="stage-head">
     <span class="stage-num">第 1 步</span>
-    <span class="stage-title">量化入门 · 你的主场（提速段）</span>
-    <span class="stage-week">第 1-5 周 · 约 5 周</span>
+    <span class="stage-title">会计语言 · 地基</span>
+    <span class="stage-week">第 1-4 周 · 约 4 周</span>
     <span class="stage-progress" data-stage-progress></span>
   </div>
-  <p class="goal">这一段的目的是<b>先拿下一个胜利、建立正反馈</b>——量化是你的能力主场，读起来会比财务书顺得多。</p>
-  <div class="book" data-book="打开量化投资的黑箱"><input type="checkbox"><span class="order">2</span><span class="btitle">《打开量化投资的黑箱》里什·纳兰</span><span class="badge b-have">已在书架</span></div>
-  <div class="book" data-book="量化交易从入门到精通"><input type="checkbox"><span class="order">3</span><span class="btitle">《量化交易从入门到精通》欧内斯特·陈</span><span class="badge b-have">已在书架</span></div>
-  <div class="note"><b>读法</b>：先读《黑箱》建立全局观（科普性质，门槛低）；再读 Ernest Chan，<b>边读边用 Python 敲代码</b>。遇到不熟的市场术语可先跳过，第 2 步会系统补齐——不追求一次读懂。</div>
+  <p class="goal">巴菲特给年轻人的忠告：<b>必须要懂会计</b>——会计是商业的语言，不懂它就没法「读公司」。</p>
+  <div class="book" data-book="一本书读懂财报"><input type="checkbox"><span class="order">2</span><span class="btitle">《一本书读懂财报》肖星</span><a href="https://weread.qq.com/book-detail?type=1&v=15332930813ab7572g018073" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
+  <div class="book" data-book="张新民教你读财报"><input type="checkbox"><span class="order">3</span><span class="btitle">《张新民教你读财报》张新民</span><a href="https://weread.qq.com/book-detail?type=1&v=a6932010813ab789bg0155e6" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
+  <div class="book" data-book="财务分析：挖掘数字背后的商业价值"><input type="checkbox"><span class="order">4</span><span class="btitle">《财务分析：挖掘数字背后的商业价值》吴坚</span><span class="badge b-have">已在书架</span></div>
+  <div class="note warn"><b>为什么从这一层开始</b>：原计划把财报放在第 16 周，等于先学招式再学识字。巴菲特 11 岁起自学会计，办公室里没有电脑和行情软件，只有 188 个抽屉的上市公司年报——<b>他的起点就是这一层</b>。</div>
 </div>
 
 <div class="stage s2">
   <div class="stage-head">
     <span class="stage-num">第 2 步</span>
-    <span class="stage-title">金融与市场常识</span>
-    <span class="stage-week">第 6-9 周 · 约 4 周</span>
+    <span class="stage-title">价值投资框架</span>
+    <span class="stage-week">第 5-10 周 · 约 6 周</span>
     <span class="stage-progress" data-stage-progress></span>
   </div>
-  <p class="goal">看懂市场结构、指数与长期规律，建立「市场整体」的视角，同时补上第 1 步跳过的术语。</p>
-  <div class="book" data-book="金融学从入门到精通"><input type="checkbox"><span class="order">4</span><span class="btitle">《金融学从入门到精通》武永梅</span><span class="badge b-have">已在书架</span></div>
-  <div class="book" data-book="漫步华尔街"><input type="checkbox"><span class="order">5</span><span class="btitle">《漫步华尔街》伯顿·马尔基尔</span><a href="https://weread.qq.com/book-detail?type=1&v=77232330813ab9312g018232" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
+  <p class="goal">建立起巴菲特投资体系的三条支柱：买股票就是买公司、正确看待市场先生、安全边际。</p>
+  <div class="book" data-book="聪明的投资者"><input type="checkbox"><span class="order">5</span><span class="btitle">《聪明的投资者》本杰明·格雷厄姆 <span style="color:var(--muted);font-size:12px">（重点读第 8、20 章）</span></span><a href="https://weread.qq.com/book-detail?type=1&v=08d329d0813ab6c03g016242" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
+  <div class="book" data-book="漫步华尔街"><input type="checkbox"><span class="order">6</span><span class="btitle">《漫步华尔街》伯顿·马尔基尔</span><a href="https://weread.qq.com/book-detail?type=1&v=77232330813ab9312g018232" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
+  <div class="note"><b>读法</b>：巴菲特 19 岁读到《聪明的投资者》说「一切从此改变」——<b>第 8 章（市场先生）和第 20 章（安全边际）</b>是他反复强调的核心两章，先精读这两章，其余可通读。《漫步华尔街》提供反面视角（有效市场 + 指数基金），读完你才知道主动选股的难度在哪。</div>
 </div>
 
 <div class="stage s3">
   <div class="stage-head">
     <span class="stage-num">第 3 步</span>
-    <span class="stage-title">投资理念与纪律</span>
-    <span class="stage-week">第 10-15 周 · 约 6 周</span>
+    <span class="stage-title">商业理解：护城河与成长</span>
+    <span class="stage-week">第 11-16 周 · 约 6 周</span>
     <span class="stage-progress" data-stage-progress></span>
   </div>
-  <p class="goal">理解风险、周期与安全边际——先懂「为什么看」，再学「怎么看」。</p>
-  <div class="book" data-book="投资最重要的事"><input type="checkbox"><span class="order">6</span><span class="btitle">《投资最重要的事》霍华德·马克斯</span><span class="badge b-have">已在书架</span></div>
-  <div class="book" data-book="聪明的投资者"><input type="checkbox"><span class="order">7</span><span class="btitle">《聪明的投资者》本杰明·格雷厄姆</span><a href="https://weread.qq.com/book-detail?type=1&v=08d329d0813ab6c03g016242" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
-</div>
-
-<div class="stage s-fin">
-  <div class="stage-head">
-    <span class="stage-num">支线</span>
-    <span class="stage-title">财报分析：看懂公司财务数据</span>
-    <span class="stage-week">第 16-19 周 · 约 4 周</span>
-    <span class="stage-progress" data-stage-progress></span>
-  </div>
-  <p class="goal">分析公司的地基。读完能独立拆解一份年报，并识别财务造假信号。</p>
-  <div class="book" data-book="一本书读懂财报"><input type="checkbox"><span class="order">8</span><span class="btitle">《一本书读懂财报》肖星</span><a href="https://weread.qq.com/book-detail?type=1&v=15332930813ab7572g018073" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
-  <div class="book" data-book="张新民教你读财报"><input type="checkbox"><span class="order">9</span><span class="btitle">《张新民教你读财报》张新民 <span style="color:var(--muted);font-size:12px">（替代原计划的唐朝版，书城未收录）</span></span><a href="https://weread.qq.com/book-detail?type=1&v=a6932010813ab789bg0155e6" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
-  <div class="book" data-book="财务分析：挖掘数字背后的商业价值"><input type="checkbox"><span class="order">10</span><span class="btitle">《财务分析：挖掘数字背后的商业价值》吴坚</span><span class="badge b-have">已在书架</span></div>
-  <div class="book" data-book="学会估值，学会投资"><input type="checkbox"><span class="order">11</span><span class="btitle">《学会估值，轻松投资》阿斯沃斯·达摩达兰</span><a href="https://weread.qq.com/book-detail?type=1&v=23d3215071d4e8db23d0d24" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
+  <p class="goal">从「捡便宜」升级到「买好公司」——巴菲特说自己 85% 是格雷厄姆，另外 15% 来自这里。</p>
+  <div class="book" data-book="成长股获利之道"><input type="checkbox"><span class="order">7</span><span class="btitle">《成长股获利之道》菲利普·A.费雪 <span style="color:var(--muted);font-size:12px">（费雪经典《怎样选择成长股》书城未收录，此为同作者替代）</span></span><a href="https://weread.qq.com/book-detail?type=1&v=a03321e0813ab863eg01806e" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
+  <div class="book" data-book="穷查理宝典"><input type="checkbox"><span class="order">8</span><span class="btitle">《穷查理宝典》查理·芒格</span><a href="https://weread.qq.com/book-detail?type=1&v=2e0320e05cc92c2e0796c5a" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
+  <div class="note"><b>为什么是这两本</b>：费雪给的是「怎么判断一家公司值不值得长期持有」（管理层、研发、护城河）；芒格给的是「怎么判断自己会不会犯错」（多元思维模型、误判心理学）。巴菲特说芒格「丰富了他的投资体系」——这一步是价值投资从 1.0 到 2.0。</div>
 </div>
 
 <div class="stage s4">
   <div class="stage-head">
     <span class="stage-num">第 4 步</span>
-    <span class="stage-title">交易技术与心理</span>
-    <span class="stage-week">第 20-25 周 · 约 6 周</span>
+    <span class="stage-title">原汁原味的巴菲特</span>
+    <span class="stage-week">第 17-22 周 · 约 6 周</span>
     <span class="stage-progress" data-stage-progress></span>
   </div>
-  <p class="goal">技术分析、系统化交易规则、交易心理。新手淘汰赛的头号关卡是心理与仓位，不是技术。</p>
-  <div class="book" data-book="日本蜡烛图技术"><input type="checkbox"><span class="order">12</span><span class="btitle">《日本蜡烛图技术》史蒂夫·尼森</span><a href="https://weread.qq.com/book-detail?type=1&v=e9032c1071e8af44e90ae59" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
-  <div class="book" data-book="以交易为生"><input type="checkbox"><span class="order">13</span><span class="btitle">《以交易为生（原书第2版）》亚历山大·埃尔德 <span style="color:var(--muted);font-size:12px">（替代原计划《海龟交易法则》，书城未收录；8.2 分 / 2994 人评价）</span></span><a href="https://weread.qq.com/book-detail?type=1&v=8fa32a205dde488fa6bc2a6" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
-  <div class="book" data-book="交易心理分析"><input type="checkbox"><span class="order">14</span><span class="btitle">《交易心理分析》马克·道格拉斯</span><a href="https://weread.qq.com/book-detail?type=1&v=f9b32a607255158ef9bbace" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
+  <p class="goal">前面三本都是别人写的巴菲特，这一步直接读他本人怎么想。</p>
+  <div class="book" data-book="巴菲特致股东的信"><input type="checkbox"><span class="order">9</span><span class="btitle">《巴菲特致股东的信》劳伦斯·坎宁安 编</span><a href="https://weread.qq.com/book-detail?type=1&v=8cb322605e2c008cb4c4217" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
+  <div class="book" data-book="投资最重要的事"><input type="checkbox"><span class="order">10</span><span class="btitle">《投资最重要的事》霍华德·马克斯</span><span class="badge b-have">已在书架</span></div>
+</div>
+
+<div class="stage s5">
+  <div class="stage-head">
+    <span class="stage-num">第 5 步</span>
+    <span class="stage-title">估值落地</span>
+    <span class="stage-week">第 23-26 周 · 约 4 周</span>
+    <span class="stage-progress" data-stage-progress></span>
+  </div>
+  <p class="goal">所有分析的终点是同一个问题：这家公司值多少钱？值不值得我现在买？</p>
+  <div class="book" data-book="学会估值，学会投资"><input type="checkbox"><span class="order">11</span><span class="btitle">《学会估值，轻松投资》阿斯沃斯·达摩达兰</span><a href="https://weread.qq.com/book-detail?type=1&v=23d3215071d4e8db23d0d24" target="_blank" style="text-decoration:none"><span class="badge b-need">需新增 · 点开书城页</span></a></div>
 </div>
 
 <div class="toolbar" style="margin:10px 0 0;text-align:right">
   <button class="reset-btn" id="resetBtn">重置全部进度</button>
+</div>
+
+<h2>工具箱（可选 · 不计入总进度）</h2>
+<div class="stage apx">
+  <div class="stage-head">
+    <span class="stage-num">附录</span>
+    <span class="stage-title">另一条路与你的技术底子</span>
+    <span class="stage-week">任意时间</span>
+    <span class="stage-progress" data-stage-progress></span>
+  </div>
+  <p class="goal">技术派/量化不是错，只是不是巴菲特这条路。放在这里：不占主线时间，需要时再翻。</p>
+  <div class="book" data-book="金融学从入门到精通"><input type="checkbox"><span class="order">A</span><span class="btitle">《金融学从入门到精通》武永梅</span><span class="badge b-have">已在书架</span></div>
+  <div class="book" data-book="打开量化投资的黑箱"><input type="checkbox"><span class="order">B</span><span class="btitle">《打开量化投资的黑箱》里什·纳兰</span><span class="badge b-have">已在书架</span></div>
+  <div class="book" data-book="量化交易从入门到精通"><input type="checkbox"><span class="order">C</span><span class="btitle">《量化交易从入门到精通》欧内斯特·陈</span><span class="badge b-have">已在书架</span></div>
+  <div class="note warn"><b>你的技术能力不会浪费</b>：格雷厄姆的《证券分析》通篇是数字，达摩达兰估值全靠算。你的 Python 能力以后用在<b>批量筛公司和处理财报数据</b>上——角色从「主力」变成「扳手」，不是作废。<br><b>已移除</b>：日本蜡烛图技术 / 以交易为生 / 交易心理分析（巴菲特明确警告「不要沉迷股价图表」，与价值投资方法论冲突）。</div>
+</div>
+
+<h2>巴菲特的读法（值得照抄的四条）</h2>
+<div class="tips">
+  <ul>
+    <li><b>海量读</b>：他每天读 500 页，读七十年。买可口可乐前读完它自 1896 年以来 92 年的全部年报。</li>
+    <li><b>只读一手材料</b>：不看券商报告和二手解读，直接读年报与股东信。「40 年里没从华尔街报告得到过任何想法，但从年报中得到很多。」SEC EDGAR（sec.gov/edgar）免费查所有美股 10-K / 10-Q。</li>
+    <li><b>读竞争对手</b>：读自家公司年报，也读竞争对手年报——这样才知道它的优势是不是真的。</li>
+    <li><b>往回读十年</b>：把管理层十年前的承诺和实际结果对一遍，判断诚信。这一条比任何单季财报都有用。</li>
+    <li><b>费曼自检</b>：每读完一章，用一句话向自己解释核心概念，说不出来就回读。</li>
+  </ul>
 </div>
 
 <h2>财务知识概念地图（读财报书前先记住这张图）</h2>
@@ -240,21 +267,11 @@
 <h2>与阅读挑战的对齐</h2>
 <table>
   <tr><th>挑战</th><th>节奏要求</th><th>本计划的执行方式</th></tr>
-  <tr><td>21 天挑战（10 小时）</td><td>≈ 每天 30 分钟</td><td>用 6-7 天读完《战胜一切市场的人》剩余 32%，随后开《打开量化投资的黑箱》打卡</td></tr>
-  <tr><td>360 天挑战（300 小时）</td><td>≈ 每天 50 分钟</td><td>六阶段主线约 26 周；剩余约半年用于量化进阶与 Ernest Chan 三部曲</td></tr>
+  <tr><td>21 天挑战（10 小时）</td><td>≈ 每天 30 分钟</td><td>用 6-7 天读完《战胜一切市场的人》剩余 32%，随后开《一本书读懂财报》打卡</td></tr>
+  <tr><td>360 天挑战（300 小时）</td><td>≈ 每天 50 分钟</td><td>主线 11 本约 26 周；剩余约半年用于读原典（《证券分析》选读）+ 拿真 10-K 年报做对照练习</td></tr>
 </table>
 
-<h2>学习方法四条</h2>
-<div class="tips">
-  <ul>
-    <li><b>先动手，再补理论</b>：第 1 步就用 Python 敲代码，跑通一个回测比读完一章理论更有反馈。</li>
-    <li><b>边读边对照真财报</b>：读到财报第 2 章后，去 SEC EDGAR（sec.gov/edgar）下载苹果或微软的 10-K，逐科目对照。</li>
-    <li><b>费曼自检</b>：每读完一章，用一句话向自己解释核心概念，说不出来就回读。</li>
-    <li><b>技术变现</b>：量化阶段用 Python（yfinance / SEC EDGAR API）自动拉取财务数据计算 ROE、现金流趋势。</li>
-  </ul>
-</div>
-
-<footer>Reading-Vault · 海纳读书搭子 · 生成于 2026-09-24 · 2026-09-27 调序 · 进度保存在本机浏览器 localStorage</footer>
+<footer>Reading-Vault · 海纳读书搭子 · 生成于 2026-09-24 · 2026-09-27 二次调整为巴菲特路线 · 进度保存在本机浏览器 localStorage</footer>
 </div>
 
 <script>
@@ -263,7 +280,8 @@
   var state = {};
   try { state = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { state = {}; }
 
-  var books = document.querySelectorAll('.book');
+  var allBooks = document.querySelectorAll('.book');
+  var mainBooks = document.querySelectorAll('.stage:not(.apx) .book');
   var totalFill = document.getElementById('totalFill');
   var totalText = document.getElementById('totalText');
   var stages = document.querySelectorAll('.stage');
@@ -273,18 +291,18 @@
   }
 
   function render() {
-    var done = 0;
-    books.forEach(function (b) {
-      var name = b.getAttribute('data-book');
-      var isDone = !!state[name];
-      var cb = b.querySelector('input[type="checkbox"]');
-      cb.checked = isDone;
+    allBooks.forEach(function (b) {
+      var isDone = !!state[b.getAttribute('data-book')];
+      b.querySelector('input[type="checkbox"]').checked = isDone;
       b.classList.toggle('done', isDone);
-      if (isDone) done++;
     });
-    var pct = Math.round(done / books.length * 100);
+    var done = 0;
+    mainBooks.forEach(function (b) {
+      if (state[b.getAttribute('data-book')]) done++;
+    });
+    var pct = Math.round(done / mainBooks.length * 100);
     totalFill.style.width = pct + '%';
-    totalText.textContent = '总进度：' + done + ' / ' + books.length + ' 本（' + pct + '%）';
+    totalText.textContent = '总进度：' + done + ' / ' + mainBooks.length + ' 本（' + pct + '%）';
     stages.forEach(function (stage) {
       var sb = stage.querySelectorAll('.book');
       var sd = 0;
@@ -294,7 +312,7 @@
     });
   }
 
-  books.forEach(function (b) {
+  allBooks.forEach(function (b) {
     b.querySelector('input[type="checkbox"]').addEventListener('change', function () {
       state[b.getAttribute('data-book')] = this.checked;
       save();
