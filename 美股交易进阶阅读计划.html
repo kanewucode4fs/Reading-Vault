@@ -68,6 +68,10 @@
   .apx { background: var(--page); border-style: dashed; }
   .apx .stage-num { background: var(--muted); }
   .apx .book input[type="checkbox"] { accent-color: #5f5e5a; }
+  .aside { background: #fffdfa; border-style: dashed; border-color: var(--pink-line); }
+  .aside .stage-num { background: var(--pink-line); }
+  .aside .book input[type="checkbox"] { accent-color: var(--pink-line); }
+  .aside .note b { color: var(--pink-ink); }
   .note {
     background: var(--green-bg); border: 1px solid var(--green-line); border-radius: 8px;
     padding: 12px 16px; font-size: 13px; color: var(--green-ink); margin-top: 10px;
@@ -109,13 +113,14 @@
 
 <header>
   <h1>美股价值投资 · 进阶阅读计划</h1>
-  <p>路线：热身 → 会计语言（地基）→ 价值投资框架 → <b>插叙 · 市场史与周期</b> → 商业理解 → 原汁原味的巴菲特 → 估值落地。主线 <b>12</b> 本，约 26 周；插叙与工具箱不计入主线进度。勾选书目即自动保存进度（本机浏览器）。</p>
+  <p><b>双轨并行</b>：A 轨技能主线（热身 → 会计语言 → 价值投资框架 → 商业理解 → 原汁原味的巴菲特 → 估值落地）· <b>B 轨历史纵深</b>（7 本，按阶段并行）。主线 <b>12</b> 本，约 26 周；B 轨与工具箱不计入主线进度。勾选书目即自动保存进度（本机浏览器）。</p>
   <div class="chips">
     <span class="chip">🎯 21 天挑战 · 每天 30 分钟</span>
     <span class="chip">🎯 360 天挑战 · 300 小时 · 每天 50 分钟</span>
     <span class="chip">📌 2026-09-27 二次调整：改走巴菲特路线</span>
     <span class="chip">🔧 三次微调：第 1 步按难度实测重排</span>
-    <span class="chip">🆘 2026-10-12 四次调整：第 1 步加前置 + 插叙市场史 3 本（读不动时的急救）</span>
+    <span class="chip">🆘 2026-10-12 四次调整：第 1 步加前置（读不动时的急救）</span>
+    <span class="chip">🌊 五次重构：改为双轨制 —— A 轨主线 12 本 + B 轨历史纵深 7 本并行</span>
   </div>
   <div class="progress-panel">
     <div class="progress-bar"><div class="progress-fill" id="totalFill"></div></div>
@@ -181,11 +186,30 @@ A 轨（主线 12 本）回答「这家公司值多少钱、怎么买」；B 轨
     <span class="stage-progress" data-stage-progress></span>
   </div>
   <p class="goal"><b>为什么专门要这一轨</b>：书架 296 本里历史类就有 22 本——《罗马人的故事》15 册、《明朝那些事儿》1-7、《历朝通俗演义》11 部、《万历十五年》、《吕思勉·中国大历史》、《春秋左传注》、《世界通史》三编，时间跨度 <b>2016 到 2026</b>。而同一段时间里：自传叙事的《战胜一切市场的人》<b>5 天读完、产出 28 条划线 / 9 张卡片</b>；概念教材《一本书读懂财报》<b>12 天只涨 5%、划线 0 新增</b>。<b>差异不在难度，在叙事性——叙事性不是调味品，是你的阅读引擎。</b>把历史排到主线之外，等于把引擎拆了。</p>
-  <div class="book" data-book="伟大的博弈"><input type="checkbox"><span class="order">插1</span><span class="btitle">《伟大的博弈（珍藏版）》约翰·S·戈登 <span style="color:var(--muted);font-size:12px">（华尔街 350 年史 · 8.4 分 / 3859 人）</span></span><span class="badge b-have">已在书架</span></div>
-  <div class="book" data-book="股市长线法宝"><input type="checkbox"><span class="order">插2</span><span class="btitle">《股市长线法宝（典藏版）》杰里米·J.西格尔 <span style="color:var(--muted);font-size:12px">（200 年美股实证数据 · 8.1 分 / 632 人）</span></span><span class="badge b-have">已在书架</span></div>
-  <div class="book" data-book="动荡时代"><input type="checkbox"><span class="order">插3</span><span class="btitle">《动荡时代》白川方明 <span style="color:var(--muted);font-size:12px">（日本银行行长亲历泡沫与危机 · 8.2 分 / 252 人）</span></span><span class="badge b-have">已在书架</span></div>
-  <div class="note"><b>各自给你什么</b>：《伟大的博弈》＝<b>读懂这个市场本身</b>——你正在交易的华尔街是怎么长出来的；'
-       <b>《股市长线法宝》＝给《聪明的投资者》补证据</b>——格雷厄姆讲的是「<b>应该</b>怎么做」，西格尔给的是「<b>为什么</b>这么做有效」（股票长期跑赢债券、黄金、现金的 200 年数据）；<b>《动荡时代》＝估值分母端的说明书</b>——白川方明亲历日本 80 年代泡沫到崩溃，学达摩达兰估值之前先懂利率与流动性是谁造出来的。<br><b>推荐读序</b>：伟大的博弈（叙事最好读）→ 股市长线法宝（数据论证）→ 动荡时代（危机机理，最难，放最后）。</div>
+  <p class="goal"><b>① 第 1 步并行 · 货币与市场从哪来</b></p>
+  <div class="book" data-book="历史上的十次货币战争"><input type="checkbox"><span class="order">B1</span><span class="btitle">《历史上的十次货币战争》郑华伟 <span style="color:var(--muted);font-size:12px">（用货币史解释「钱为什么有价」）</span></span><span class="badge b-now">10-11 已在读</span></div>
+  <div class="book" data-book="伟大的博弈"><input type="checkbox"><span class="order">B2</span><span class="btitle">《伟大的博弈（珍藏版）》约翰·S·戈登 <span style="color:var(--muted);font-size:12px">（华尔街 350 年史 · 8.4 分 / 3859 人）</span></span><span class="badge b-have">已在书架</span></div>
+  <div class="note">你正在学「读懂一份 10-K」的同时，这两本帮你读懂<b>装满这些 10-K 的那个市场本身</b>。《货币战争》是 2026-10-11 你自己已经在读的——不是我安排的，是你在干的事，正式纳入。</div>
+
+  <p class="goal"><b>② 第 2 步并行 · 市场为什么会错</b></p>
+  <div class="book" data-book="股票大作手回忆录"><input type="checkbox"><span class="order">B3</span><span class="btitle">《股票大作手回忆录》埃德温·勒菲弗 <span style="color:var(--muted);font-size:12px">（8.8 分 / 7170 人 · 小说笔法的真实金融史）</span></span><span class="badge b-need">待加入</span></div>
+  <div class="note"><b>全表评价人数最多、叙事性最强的一本</b>，原型 Jesse Livermore，1929 年做空华尔街赚一亿美元。A 轨的格雷厄姆告诉你「市场为什么会错」，这本带你看<b>市场错到极致时长什么样、人在里面怎么自我毁灭</b>。<br><b>⚠️ 读的姿势</b>：这是<b>人性标本，不是操作手册</b>——Livermore 本人最后破产自杀，而巴菲特路线恰恰是他方法的反面。<b>读它看人性，别学他的打法。</b></div>
+
+  <p class="goal"><b>③ 第 3 步并行 · 公司怎么在真实历史里浮沉</b></p>
+  <div class="book" data-book="光荣与梦想"><input type="checkbox"><span class="order">B4</span><span class="btitle">《光荣与梦想（全四册）》威廉·曼彻斯特 <span style="color:var(--muted);font-size:12px">（1932-1972 美国四十年叙事史 · 8.2 分 / 2628 人）</span></span><span class="badge b-need">待加入</span></div>
+  <div class="note"><b>这一条专门写给读《罗马人的故事》15 册、《明朝那些事儿》全套的人</b>——你要的超长篇连续叙事在这儿。A 轨的费雪和芒格教你「怎么判断一家公司好不好」，这本给你四十年的真实样本台：大萧条、二战、战后黄金期里，<b>公司是怎么活下来或者死掉的</b>。</div>
+
+  <p class="goal"><b>④ 第 4 步并行 · 离你最近的那次崩溃</b></p>
+  <div class="book" data-book="大空头"><input type="checkbox"><span class="order">B5</span><span class="btitle">《大空头》迈克尔·刘易斯 <span style="color:var(--muted);font-size:12px">（2008 危机一手叙事 · 8.0 分 / 1629 人）</span></span><span class="badge b-need">待加入</span></div>
+  <div class="book" data-book="股市长线法宝"><input type="checkbox"><span class="order">B6</span><span class="btitle">《股市长线法宝（典藏版）》杰里米·J.西格尔 <span style="color:var(--muted);font-size:12px">（200 年美股实证数据 · 8.1 分 / 632 人）</span></span><span class="badge b-have">已在书架</span></div>
+  <div class="note">《大空头》把<b>贪婪长什么样、怎么一步步滚成灾难</b>演给你看——对应巴菲特那句「别人贪婪我恐惧」。《股市长线法宝》则用两个世纪的数据回答<b>为什么长期持有这条路成立</b>（股票长期跑赢债券、黄金、现金）：A 轨的巴菲特告诉你他怎么做，这本告诉你为什么对。</div>
+
+  <p class="goal"><b>⑤ 第 5 步并行 · 学估值前先看懂泡沫</b></p>
+  <div class="book" data-book="金融投机史"><input type="checkbox"><span class="order">B7</span><span class="btitle">《金融投机史》爱德华·钱塞勒 <span style="color:var(--muted);font-size:12px">（从郁金香到南海到 1929 · 8.0 分 / 224 人）</span></span><span class="badge b-need">待加入</span></div>
+  <div class="book" data-book="动荡时代"><input type="checkbox"><span class="order">B8</span><span class="btitle">《动荡时代》白川方明 <span style="color:var(--muted);font-size:12px">（日本银行行长亲历泡沫与危机 · 8.2 分 / 252 人）</span></span><span class="badge b-have">已在书架</span></div>
+  <div class="note"><b>学 DCF 之前先读这两本</b>，你会明白估值里最难算的不是分子（现金流），<b>是分母（人心给的溢价）</b>。《金融投机史》给四百年泡沫谱系；《动荡时代》告诉你 DCF 分母端的<b>利率和流动性是谁造出来的</b>——央行，而且白川方明就在决策现场。</div>
+
+  <p class="goal"><b>书架里还有两本可直接当补充</b>（2023 年读过）：《周期》霍华德·马克斯、《涛动周期论》周金涛 —— 周期类，随时翻阅，不占配额。</p>
 </div>
 
 <div class="stage s3">
@@ -298,7 +322,7 @@ A 轨（主线 12 本）回答「这家公司值多少钱、怎么买」；B 轨
   <tr><td>360 天挑战（300 小时）</td><td>≈ 每天 50 分钟</td><td>主线 12 本约 26 周；剩余约半年用于读原典（《证券分析》选读）+ 拿真 10-K 年报做对照练习</td></tr>
 </table>
 
-<footer>Reading-Vault · 海纳读书搭子 · 生成于 2026-09-24 · 2026-09-27 二次调整（改走巴菲特路线）+ 三次微调（第 1 步按书城数据重排）+ 2026-10-12 四次调整（第 1 步加前置 ⓪、新增插叙市场史 3 本）· 进度保存在本机浏览器 localStorage</footer>
+<footer>Reading-Vault · 海纳读书搭子 · 生成于 2026-09-24 · 2026-09-27 二次调整（改走巴菲特路线）+ 三次微调（第 1 步按书城数据重排）+ 2026-10-12 四次调整（第 1 步加前置 ⓪）+ 五次重构（改为双轨制：A 轨主线 12 本 + B 轨历史纵深 7 本并行）· 进度保存在本机浏览器 localStorage</footer>
 </div>
 
 <script>
